@@ -1,7 +1,9 @@
-import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
 
-function Expenses() {
+import ExpenseItem from '../expenseItem/ExpenseItem';
+import Card from '../card/Card';
+
+const Expenses = () => {
 	const expenses = [
 		{
 			id: 'e1',
@@ -24,12 +26,12 @@ function Expenses() {
 		},
 	];
 	return (
-		<div className="expenses">
+		<Card className="expenses">
 			{expenses.map((expense) => {
 				return <ExpenseItem expenseObj={expense} key={expense.id} />;
 			})}
-		</div>
+		</Card>
 	);
-}
+};
 
 export default Expenses;
